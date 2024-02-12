@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(
@@ -60,17 +60,11 @@ class LoginViewController: UIViewController {
             message: message,
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(
-            title: "OK",
-            style: .default
-        )
-        alert.addAction(
-            okAction
-        )
-        present(
-            alert,
-            animated: true
-        )
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTextField.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert,animated: true)
     }
 }
 
