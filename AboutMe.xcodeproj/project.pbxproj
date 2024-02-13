@@ -13,7 +13,6 @@
 		AAE1A8A92B76841300D665FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE1A8A72B76841300D665FA /* Main.storyboard */; };
 		AAE1A8AB2B76841500D665FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE1A8AA2B76841500D665FA /* Assets.xcassets */; };
 		AAE1A8B62B77096C00D665FA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1A8B52B77096C00D665FA /* WelcomeViewController.swift */; };
-		AAE1A8B82B77171E00D665FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1A8B72B77171E00D665FA /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		AAE1A8AA2B76841500D665FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE1A8AF2B76841500D665FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE1A8B52B77096C00D665FA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		AAE1A8B72B77171E00D665FA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 				AAE1A8A32B76841300D665FA /* SceneDelegate.swift */,
 				AAE1A8B52B77096C00D665FA /* WelcomeViewController.swift */,
 				AAE1A8A52B76841300D665FA /* LoginViewController.swift */,
-				AAE1A8B72B77171E00D665FA /* GradientView.swift */,
 				AAE1A8A72B76841300D665FA /* Main.storyboard */,
 				AAE1A8AA2B76841500D665FA /* Assets.xcassets */,
 				AAE1A8AF2B76841500D665FA /* Info.plist */,
@@ -142,7 +139,6 @@
 			files = (
 				AAE1A8A62B76841300D665FA /* LoginViewController.swift in Sources */,
 				AAE1A8B62B77096C00D665FA /* WelcomeViewController.swift in Sources */,
-				AAE1A8B82B77171E00D665FA /* GradientView.swift in Sources */,
 				AAE1A8A22B76841300D665FA /* AppDelegate.swift in Sources */,
 				AAE1A8A42B76841300D665FA /* SceneDelegate.swift in Sources */,
 			);
