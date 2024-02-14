@@ -12,7 +12,12 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    let userAlex = User.exexample
+    private let userAlex = User.exexample
+    private let anton = Client.exexample
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
@@ -23,36 +28,54 @@ final class LoginViewController: UIViewController {
         withIdentifier identifier: String,
         sender: Any?
     ) -> Bool {
-        guard userAlex.authorization(introducedUser: userNameTextField.text ?? "", introducedPassword: passwordTextField.text ?? "")
-             else {
+        guard userAlex.authorization(
+            introducedUser: userNameTextField.text ?? "",
+            introducedPassword: passwordTextField.text ?? ""
+        )
+        else {
             showAlert(
                 withTitle: "Error",
                 argMessage: "Incorrect data, try again", completion: {
                     self.passwordTextField.text = ""
-                }, needAutofill: {
-                    self.userNameTextField.text = self.userAlex.userName
-                    self.passwordTextField.text = self.userAlex.password
                 })
             return false
         }
         return true
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.user = userAlex
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
+        let tabBarVC = segue.destination as? UITabBarController
+        tabBarVC?.viewControllers?.forEach { viewController in
+            if let welcomVC = viewController as? WelcomeViewController {
+                welcomVC.user = userAlex
+                welcomVC.client = anton
+            } else if let navigationVC = viewController as? UINavigationController {
+                if let myInfoVC = navigationVC.topViewController as? MyInfoViewController {
+                    myInfoVC.me = anton
+                }
+            }
+        }
     }
     
     @IBAction func showNotifUserName() {
-        showAlert(withTitle: "User Name", argMessage: "Your user name is \(userAlex.userName)", needAutofill: {
+        showAlert(withTitle: "User Name",
+                  argMessage: "Your user name is \(userAlex.userName)",
+                  needAutofill: {
             self.userNameTextField.text = self.userAlex.userName
         })
     }
+    
     @IBAction func showNotifPassword() {
-        showAlert(withTitle: "Password", argMessage: "Your password is \(userAlex.password)", needAutofill: {
+        showAlert(withTitle: "Password",
+                  argMessage: "Your password is \(userAlex.password)",
+                  needAutofill: {
             self.passwordTextField.text = self.userAlex.password
         })
     }
+    
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""

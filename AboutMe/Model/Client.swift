@@ -7,10 +7,18 @@
 
 
 struct Client {
+    
+    static let exexample = Client(avatar: "avatar", name: "Anton", lastName: "Godunov", company: "RTK IT", departament: "Direction of digital product development", position: "Lead Testing Specialist", bio: "Родился в Гусь-Хрустальном, в москву приехал учиться, после учебы пошел работать по специальности. На текущей работе организовал спортивный клуб по сквошу.")
+    
     let avatar: String
     let name: String
     let lastName: String
     let company: String
     let departament: String
     let position: String
+    let bio: String
+    
+    func returnfullName() -> String {
+        return name + " " + lastName
+    }
 }

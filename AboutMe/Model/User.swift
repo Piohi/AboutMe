@@ -10,7 +10,7 @@ struct User {
     let userName: String
     let password: String
     
-    static let exexample: User = .init(userName: "1", password: "1")
+    static let exexample = User(userName: "Alex", password: "Alex")
     
     func authorization(
         introducedUser: String,

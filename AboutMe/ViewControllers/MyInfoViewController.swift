@@ -11,29 +11,32 @@ final class MyInfoViewController: UIViewController {
     
     @IBOutlet var avatar: UIImageView!
     
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var lastNameLabel: UILabel!
+    @IBOutlet var companyLabel: UILabel!
+    @IBOutlet var departamentLabel: UILabel!
+    @IBOutlet var positionLabel: UILabel!
     
-    private let primaryColor = UIColor (
-        red: 240/255,
-        green: 109/255,
-        blue: 128/255,
-        alpha: 1
-    )
+    var me: Client!
     
-    private let secondaryColor = UIColor (
-        red: 107/255,
-        green: 148/255,
-        blue: 230/255,
-        alpha: 0.9
-    )
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let myBioVC = segue.destination as? MyBioViewController
+        myBioVC?.myBio = me.bio
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         avatar.layer.cornerRadius = avatar.frame.height / 2
-        avatar.image = UIImage(named: "avatar")
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        avatar.image = UIImage(named: me.avatar)
+        nameLabel.text = me.name
+        lastNameLabel.text = me.lastName
+        companyLabel.text = me.company
+        departamentLabel.text = me.departament
+        positionLabel.text = me.position
+        view.addVerticalGradientLayer(
+            topColor: UIColor.primaryColor,
+            bottomColor: UIColor.secondaryColor
+        )
+        navigationItem.title = me.returnfullName()
     }
-    
-    override func viewWillLayoutSubviews() {
-    }
-    
 }
