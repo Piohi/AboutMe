@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA74174A2B7CCB7500B52814 /* MyBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7417492B7CCB7500B52814 /* MyBioViewController.swift */; };
-		AA74174D2B7CE43400B52814 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA74174C2B7CE43400B52814 /* UIColor.swift */; };
 		AA74174F2B7CE4AA00B52814 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA74174E2B7CE4AA00B52814 /* UIView.swift */; };
 		AAE1A8A22B76841300D665FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1A8A12B76841300D665FA /* AppDelegate.swift */; };
 		AAE1A8A42B76841300D665FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1A8A32B76841300D665FA /* SceneDelegate.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		AA7417492B7CCB7500B52814 /* MyBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBioViewController.swift; sourceTree = "<group>"; };
-		AA74174C2B7CE43400B52814 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AA74174E2B7CE4AA00B52814 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AAE1A89E2B76841300D665FA /* AboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1A8A12B76841300D665FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +50,6 @@
 		AA74174B2B7CE3F000B52814 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA74174C2B7CE43400B52814 /* UIColor.swift */,
 				AA74174E2B7CE4AA00B52814 /* UIView.swift */,
 			);
 			path = Extensions;
@@ -82,7 +79,7 @@
 				CE8FE5D42B7BA3E000D557CB /* Storyboards */,
 				CE8FE5D22B7BA33100D557CB /* App */,
 				AAE1A8AA2B76841500D665FA /* Assets.xcassets */,
-				CE8FE5D92B7C030F00D557CB /* Model */,
+				CE8FE5D92B7C030F00D557CB /* Models */,
 			);
 			path = AboutMe;
 			sourceTree = "<group>";
@@ -116,13 +113,13 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		CE8FE5D92B7C030F00D557CB /* Model */ = {
+		CE8FE5D92B7C030F00D557CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CE8FE5D72B7C030800D557CB /* Client.swift */,
 				CE8FE5DA2B7C049700D557CB /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +197,6 @@
 				AA74174A2B7CCB7500B52814 /* MyBioViewController.swift in Sources */,
 				AAE1A8B62B77096C00D665FA /* WelcomeViewController.swift in Sources */,
 				CE8FE5D82B7C030800D557CB /* Client.swift in Sources */,
-				AA74174D2B7CE43400B52814 /* UIColor.swift in Sources */,
 				CE8FE5D62B7BB3B400D557CB /* MyInfoViewController.swift in Sources */,
 				AAE1A8A22B76841300D665FA /* AppDelegate.swift in Sources */,
 				AAE1A8A42B76841300D665FA /* SceneDelegate.swift in Sources */,

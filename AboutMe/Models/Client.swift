@@ -17,8 +17,9 @@ struct Client {
     let departament: String
     let position: String
     let bio: String
-    
-    func returnfullName() -> String {
-        return name + " " + lastName
+    var wholeName: String {
+        get {
+            return "\(self.name) \(lastName)"
+        }
     }
 }

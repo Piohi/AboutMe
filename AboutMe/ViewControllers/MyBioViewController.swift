@@ -17,8 +17,8 @@ final class MyBioViewController: UIViewController {
         super.viewDidLoad()
         myBioLabel.text = myBio
         view.addVerticalGradientLayer(
-            topColor: UIColor.primaryColor,
-            bottomColor: UIColor.secondaryColor
+            topColor: UIColor(named: "primaryColor") ?? .white,
+            bottomColor: UIColor(named: "secondaryColor") ?? .black
         )
     }
 }

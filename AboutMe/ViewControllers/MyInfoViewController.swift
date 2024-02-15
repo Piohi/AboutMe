@@ -34,9 +34,9 @@ final class MyInfoViewController: UIViewController {
         departamentLabel.text = me.departament
         positionLabel.text = me.position
         view.addVerticalGradientLayer(
-            topColor: UIColor.primaryColor,
-            bottomColor: UIColor.secondaryColor
+            topColor: UIColor(named: "primaryColor") ?? .white,
+            bottomColor: UIColor(named: "secondaryColor") ?? .black
         )
-        navigationItem.title = me.returnfullName()
+        navigationItem.title = me.wholeName
     }
 }

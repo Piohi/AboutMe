@@ -9,18 +9,16 @@ struct User {
     
     let userName: String
     let password: String
+    let person: Client
     
-    static let exexample = User(userName: "Alex", password: "Alex")
+    static let exexample = User(userName: "Alex", password: "Alex", person: Client.exexample)
     
-    func authorization(
+    func singIn(
         introducedUser: String,
         introducedPassword: String
     ) -> Bool {
-        if userName == introducedUser,
-           password == introducedPassword {
-            return true
-        } else {
-            return false
-        }
+        return userName == introducedUser &&
+        password == introducedPassword
     }
 }
+

@@ -13,10 +13,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     private let userAlex = User.exexample
-    private let anton = Client.exexample
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameTextField.text = userAlex.userName
+        passwordTextField.text = userAlex.password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -28,7 +29,7 @@ final class LoginViewController: UIViewController {
         withIdentifier identifier: String,
         sender: Any?
     ) -> Bool {
-        guard userAlex.authorization(
+        guard userAlex.singIn(
             introducedUser: userNameTextField.text ?? "",
             introducedPassword: passwordTextField.text ?? ""
         )
@@ -51,10 +52,9 @@ final class LoginViewController: UIViewController {
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomVC = viewController as? WelcomeViewController {
                 welcomVC.user = userAlex
-                welcomVC.client = anton
             } else if let navigationVC = viewController as? UINavigationController {
                 if let myInfoVC = navigationVC.topViewController as? MyInfoViewController {
-                    myInfoVC.me = anton
+                    myInfoVC.me = userAlex.person
                 }
             }
         }
@@ -62,18 +62,14 @@ final class LoginViewController: UIViewController {
     
     @IBAction func showNotifUserName() {
         showAlert(withTitle: "User Name",
-                  argMessage: "Your user name is \(userAlex.userName)",
-                  needAutofill: {
-            self.userNameTextField.text = self.userAlex.userName
-        })
+                  argMessage: "Your user name is \(userAlex.userName)"
+                  )
     }
     
     @IBAction func showNotifPassword() {
         showAlert(withTitle: "Password",
-                  argMessage: "Your password is \(userAlex.password)",
-                  needAutofill: {
-            self.passwordTextField.text = self.userAlex.password
-        })
+                  argMessage: "Your password is \(userAlex.password)"
+                  )
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -94,12 +90,6 @@ final class LoginViewController: UIViewController {
         )
         let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             completion?()
-        }
-        if let needAutofill {
-            let autofill = UIAlertAction(title: "Заполнить", style: .default) { _ in
-                needAutofill()
-            }
-            alert.addAction(autofill)
         }
         alert.addAction(okAction)
         present(alert,animated: true)

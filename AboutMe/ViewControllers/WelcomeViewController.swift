@@ -13,14 +13,16 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet private var myName: UILabel!
     
     var user: User!
-    var client: Client!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(user!)
         userNameLabel.text = "Welcome, \(user.userName)!"
-        myName.text = "My name is \(client.name) \(client.lastName)."
-        view.addVerticalGradientLayer(topColor: UIColor.primaryColor, bottomColor: UIColor.secondaryColor)
+        myName.text = "My name is \(user.person.name) \(user.person.lastName)."
+        view.addVerticalGradientLayer(
+            topColor: UIColor(named: "primaryColor") ?? .white,
+            bottomColor: UIColor(named: "secondaryColor") ?? .black
+        )
     }
 }
 
